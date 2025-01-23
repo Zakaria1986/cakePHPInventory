@@ -2,27 +2,28 @@
 
 ## References:
 
-###Install the cake php:
+### Install the cake php:
 
 * https://book.cakephp.org/5/en/quickstart.html
 
-Cake php folder structure:
+### Cake php folder structure:
 
 * https://book.cakephp.org/5/en/intro/cakephp-folder-structure.html
 
-Standard follow when coding:
+### Standard follow when coding:
 
 * https://book.cakephp.org/5/en/intro/conventions.html
 
-Folder structure and writing codes:
+### Folder structure and writing codes:
 
 * https://book.cakephp.org/5/en/tutorials-and-examples/cms/articles-controller.html
 
-HTML Helper: 
+### HTML Helper: 
 
 * https://book.cakephp.org/5/en/views/helpers/html.html
 
-Git example: 
+### Git example: 
+
 * https://github.com/HarkiratGhotra/cake/blob/e99dae73cc5f0c127a24f179b7cf8bb6656fab2e/src/Controller/ArticlesController.php
 
 ## Installation: 
@@ -31,7 +32,7 @@ Git example:
     - Note. (.) at the end will download the files in the current folder same as the composer files. 
 * Start the cake-up server: bin/cake server
 
-##How to Access the CakePHP Application in cms
+## How to Access the CakePHP Application in cms
 
 1. Start the CakePHP Development Server: **bin/cake server** 
 2. Access the Application: Open your browser and go to:http://localhost:8765
