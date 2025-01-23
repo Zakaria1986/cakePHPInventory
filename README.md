@@ -28,14 +28,16 @@
 
 ## Installation: 
 
+* Install composer: 
+
 * Install cakephp 5 run: php composer.phar create-project --prefer-dist cakephp/app:5 . 
     - Note. (.) at the end will download the files in the current folder same as the composer files. 
-* Start the cake-up server: bin/cake server
 
 ## How to Access the CakePHP Application in cms
 
 1. Start the CakePHP Development Server: **bin/cake server** 
 2. Access the Application: Open your browser and go to:http://localhost:8765
+3. Stop the server: control+c
 
 ## File structure of cake php
 
