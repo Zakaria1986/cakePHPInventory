@@ -1,0 +1,13 @@
+# Ignore vendor folder in cms
+cms/vendor/
+
+# Ignore temporary files and logs
+cms/tmp/
+cms/logs/
+
+# Ignore Composer files in the root
+composer.phar
+
+# MacOS system files
+.DS_Store
+
