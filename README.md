@@ -58,7 +58,7 @@ cakephpinventory/
 * This command generates a migration file in: config/Migrations directory:
 * Command generates a migration file in the config/Migrations directory:
 
-###Create migration command table: 
+##Create migration command table: 
 
 * Run: **bin/cake bake migration [CreateProductTable]** 
     - Note: change name and remove the box brackets. 
