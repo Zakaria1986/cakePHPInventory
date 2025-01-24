@@ -73,4 +73,4 @@ cakephpinventory/
 
 * Seed the product table by running: **bin/cake bake seed Products** 
     - note: This will create a folder then a file with the product with necessary code
-    - [](https://book.cakephp.org/migrations/4/en/seeding.html)
+    - []('https://book.cakephp.org/migrations/4/en/seeding.html')
