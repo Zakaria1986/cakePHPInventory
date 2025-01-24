@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 use Migrations\BaseSeed;
@@ -20,9 +21,36 @@ class ProductsSeed extends BaseSeed
      */
     public function run(): void
     {
-        $data = [];
 
+        $data = [
+            [
+                'name' => 'Test Product 1',
+                'quantity' => 100,
+                'price' => 19.99,
+                'status' => 'in stock',
+            ],
+            [
+                'name' => 'Test Product 2',
+                'quantity' => 0,
+                'price' => 9.99,
+                'status' => 'out of stock',
+            ],
+            [
+                'name' => 'Test Product 3',
+                'quantity' => 100,
+                'price' => 19.99,
+                'status' => 'in stock',
+            ],
+            [
+                'name' => 'Test Product 4',
+                'quantity' => 0,
+                'price' => 9.99,
+                'status' => 'out of stock',
+            ]
+        ];
+        // identify the table
         $table = $this->table('products');
+        // Insert into the table
         $table->insert($data)->save();
     }
 }
