@@ -70,6 +70,19 @@ class ProductsTable extends Table
                     return $value >= 0 && $value <= 100;
                 },
                 'message' => 'Enter quantity between 0 and 100.'
+            ])
+            ->add('quantity', 'maxPriceForPromo', [
+                'rule' => function ($value, $context) {
+
+                    if ($context['data']['price'] > 100) {
+                        if ($value >= 10) {
+                            return true;
+                        }
+                        return false;
+                    }
+                    return true;
+                },
+                'message' => 'All products over £100 must have 10 or more quantity.'
             ]);
 
         $validator
@@ -83,8 +96,17 @@ class ProductsTable extends Table
             ->add('price', 'range', [
                 'rule' => ['range', -1, 10001], // -1 would ensure number is 0 or greate i.e. 0.34 all the way to 1000 
                 'message' => 'Enter price between 0 to 10,000.'
+            ])
+            ->add('price', 'maxPriceForPromo', [
+                'rule' => function ($value, $context) {
+                    $nameString = $context['data']['name'];
+                    if (stripos($nameString, 'promo')) {
+                        return $value < 50;
+                    }
+                    return true;
+                },
+                'message' => 'Promo product enter price less than 50.'
             ]);
-
 
         $validator
             ->scalar('status')
