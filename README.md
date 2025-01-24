@@ -57,6 +57,8 @@ cakephpinventory/
 
 ## Creating database through migration: 
 
+[](https://book.cakephp.org/5/en/quickstart.html?utm_source=chatgpt.com)
+
 * Install migration:  bin/cake bake migration Initial
 * This command generates a migration file in: config/Migrations directory:
 * Command generates a migration file in the config/Migrations directory:
