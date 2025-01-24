@@ -74,3 +74,13 @@ cakephpinventory/
 * Seed the product table by running: **bin/cake bake seed Products** 
     - note: This will create a folder then a file with the product with necessary code
     - [https://book.cakephp.org/migrations/4/en/seeding.html](https://book.cakephp.org/migrations/4/en/seeding.html)
+    
+
+### CakePHP coding convention guide to follow:
+
+ - [https://book.cakephp.org/5/en/intro/conventions.html](https://book.cakephp.org/5/en/intro/conventions.html)
+
+### Create Module table/entity object, following command does it both 
+
+* Run: bin/cake bake model Products 
+    - Note: replace word 'Products' with what ever table/entity object your are trying to create 
