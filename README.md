@@ -68,3 +68,8 @@ cakephpinventory/
 * Run: **bin/cake bake migration [CreateProductTable]** 
     - Note: change name and remove the box brackets. 
 * Then run this command to create the migration in the database and in the config file: **bin/cake migrations migrate** 
+
+### Seed a table: 
+
+* Seed the product table by running: **bin/cake bake seed Products** 
+    - note: This will create a folder then a file with the product with necessary code
