@@ -42,6 +42,12 @@
     - bin/cake bake seed SeedName
     - bin/cake migrations seed
 
+## Get Database ready in "Model and entity" object
+
+* This can be done manually or via terminal command shell by running Cake php command lines. 
+* Run: ```bin/cake bake model Products ```
+    - Note: replace word 'Products' with what ever table/entity object your are trying to create 
+
 ## Once database is ready, next start working on the controller: 
 
 * This is where object and its properties are created. In this project, object called "ProductsController" was created which had methods index, add, edit, delete, and view. 
@@ -76,32 +82,10 @@
 
 ![Folder Structure](/git_img/fld_tree.png)
 
-## Creating database through migration: 
+#
 
-[](https://book.cakephp.org/5/en/quickstart.html?utm_source=chatgpt.com)
-
-* Install migration:  bin/cake bake migration Initial
-* This command generates a migration file in: config/Migrations directory:
-* Command generates a migration file in the config/Migrations directory:
-
-### Create migration command table: 
-
-* Run: **bin/cake bake migration [CreateProductTable]** 
-    - Note: change name and remove the box brackets. 
-* Then run this command to create the migration in the database and in the config file: **bin/cake migrations migrate** 
-
-### Seed a table: 
-
-* Seed the product table by running: **bin/cake bake seed Products** 
-    - note: This will create a folder then a file with the product with necessary code
-    - [https://book.cakephp.org/migrations/4/en/seeding.html](https://book.cakephp.org/migrations/4/en/seeding.html)
-    
+*
 
 ### CakePHP coding convention guide to follow:
 
  - [https://book.cakephp.org/5/en/intro/conventions.html](https://book.cakephp.org/5/en/intro/conventions.html)
-
-### Create Module table/entity object, following command does it both 
-
-* Run: bin/cake bake model Products 
-    - Note: replace word 'Products' with what ever table/entity object your are trying to create 
