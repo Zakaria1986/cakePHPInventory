@@ -49,6 +49,7 @@ return function (RouteBuilder $routes): void {
      * inconsistently cased URLs when used with `{plugin}`, `{controller}` and
      * `{action}` markers.
      */
+
     // Custom route to list products (products/index)
     $routes->connect('/products', [
         'controller' => 'Products',
@@ -86,6 +87,18 @@ return function (RouteBuilder $routes): void {
          * You can remove these routes once you've connected the
          * routes you want in your application.
          */
+
+        // Define a default route for the products index
+        $builder->connect('/', ['controller' => 'Products', 'action' => 'index']);
+
+        // Define a route for the "add" action
+        $builder->connect('/add', ['controller' => 'Products', 'action' => 'add']);
+
+        // Define a route for viewing a product by its ID
+        $builder->connect('/view/{id}', ['controller' => 'Products', 'action' => 'view'])
+            ->setPatterns(['id' => '\d+']) // Restrict 'id' to digits
+            ->setPass(['id']); // Pass 'id' to the controller action
+
         $builder->fallbacks();
     });
 

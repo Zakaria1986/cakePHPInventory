@@ -1,3 +1,7 @@
+# Ignore everything
+# /*
+
+
 # Ignore vendor folder in cms
 cms/vendor/
 
@@ -10,4 +14,15 @@ composer.phar
 
 # MacOS system files
 .DS_Store
+
+
+
+Don't ignore these folders
+!/cms/src/Controller/
+!/cms/Model/
+!/cms/Templates/Products
+!/cms/config
+!/cms/webroot/css
+!/cms/webroot/css
+!.gitignore
 
