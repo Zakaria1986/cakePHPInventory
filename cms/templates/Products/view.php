@@ -29,16 +29,16 @@ $prodSatus = $product->status;
     <p class="product-title">
         <span class="prodTitleClass"> id: </span><?= $prodId ?>
     </p>
-    <p class="product-description"> <span class="prodTitleClass"> Product Name: </span><?= $prodName ?></p>
-    <p class="product-description"> <span class="prodTitleClass"> Prdocut price: £</span> <?= $prodPrice  ?></p>
-    <P class="product-price"> <span class="prodTitleClass"> Product quantity: </span><?= $prodQuantity ?></p>
-    <p class="product-price"> <span class="prodTitleClass"> Product Status: </span><?= $prodSatus ?></p>
+    <p class="product-name"> <span class="prodTitleClass"> Product Name: </span><?= $prodName ?></p>
+    <p class="product-price"> <span class="prodTitleClass"> Prdocut price: £</span> <?= $prodPrice  ?></p>
+    <P class="product-quantity"> <span class="prodTitleClass"> Product quantity: </span><?= $prodQuantity ?></p>
+    <p class="product-status"> <span class="prodTitleClass"> Product Status: </span><?= $prodSatus ?></p>
 </div>
 
 
 <div class="btmNav">
     <p><?= $this->Html->link('Add New Product', ['action' => 'add'], ['class' => 'button']) ?></p>
-    <p><?= $this->Html->link('Edit Product', ['action' => 'edit'], ['class' => 'button']) ?></p>
+    <p><?= $this->Html->link('Update Product', ['action' => 'edit'], ['class' => 'button']) ?></p>
     <p> <?= $this->Form->postLink(__('Delete Product'), ['action' => 'delete', $prodId],  ['class' => 'button'], ['confirm' => __('Are you sure you want to delete: {0}?', $product->name)]) ?></p>
 
 </div>
