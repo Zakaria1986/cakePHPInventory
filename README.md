@@ -56,31 +56,25 @@
 
 * [Refernce](https://book.cakephp.org/5/en/views/helpers/html.html)
 
-### Git example: 
+#### Git example: 
 
 * https://github.com/HarkiratGhotra/cake/blob/e99dae73cc5f0c127a24f179b7cf8bb6656fab2e/src/Controller/ArticlesController.php
 
-## How to Access the CakePHP Application in cms
+## How to Run the CakePHP Application in cms
 
 1. Start the CakePHP Development Server: **bin/cake server** 
-2. Access the Application: Open your browser and go to:http://localhost:8765
+2. Access the Application: Open your browser and go to: **http://localhost:8765** 
 3. Stop the server: control+c
+
+## Make you have the database running at the same 
+
+* I have used MAMP to run PHPMyAdmin to work with database side of things
+
+![phpmyadmin image](/git_img/dbPhpAdmin.png)
 
 ## File structure of cake php
 
-cakephpinventory/
-├── cms/
-│   ├── bin/
-│   ├── config/
-│   ├── src/
-│   ├── templates/
-│   ├── vendor/      # Excluded by .gitignore
-│   ├── composer.json
-│   ├── composer.lock
-│   ├── ...
-├── composer.phar    # Excluded by .gitignore
-├── .gitignore
-└── README.md
+![Folder Structure](/git_img/fld_tree.png)
 
 ## Creating database through migration: 
 
