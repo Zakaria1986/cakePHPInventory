@@ -8,8 +8,7 @@
 <?= $this->Form->control(
     'name',
     [
-        '
-         label' => 'Product Name',
+        'label' => 'Product Name',
         'required' => true,
     ]
 );
