@@ -1,17 +1,15 @@
+.prodTitleClass {
+    font-weight: bold;
+}
 
-    .prodTitleClass {
-        font-weight: bold;
-    }
+.btmNav {
 
-    .btmNav {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 1px;
 
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        gap: 10px;
+}
 
-    }
-
-    .p {
-        grid-area: 1 / 1 / 1/ span 0 / span 0;
-    }
-
+.p {
+    grid-area: 1 / 1 / span 2 / span 3;
+}

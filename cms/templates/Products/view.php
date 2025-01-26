@@ -5,24 +5,7 @@ $prodPrice = $product->price;
 $prodQuantity = $product->quantity;
 $prodSatus = $product->status;
 ?>
-<!-- Custome CSS style -->
-<style type="text/css">
-    .prodTitleClass {
-        font-weight: bold;
-    }
 
-    .btmNav {
-
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        gap: 10px;
-
-    }
-
-    .p {
-        grid-area: 1 / 1 / 1/ span 0 / span 0;
-    }
-</style>
 <p><?= $this->Html->link('Back to Home Page', ['action' => 'index'], ['class' => 'button']) ?></p>
 <h1>You are viewing individual Product: </h1>
 <div class="product-container">
@@ -38,7 +21,7 @@ $prodSatus = $product->status;
 
 <div class="btmNav">
     <p><?= $this->Html->link('Add New Product', ['action' => 'add'], ['class' => 'button']) ?></p>
-    <p><?= $this->Html->link('Update Product', ['action' => 'edit'], ['class' => 'button']) ?></p>
+    <p><?= $this->Html->link('Update Product', ['action' => 'edit', $product->id], ['class' => 'button']) ?></p>
     <p> <?= $this->Form->postLink(__('Delete Product'), ['action' => 'delete', $prodId],  ['class' => 'button'], ['confirm' => __('Are you sure you want to delete: {0}?', $product->name)]) ?></p>
 
 </div>

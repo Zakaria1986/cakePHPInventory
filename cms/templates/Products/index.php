@@ -1,4 +1,4 @@
-<h1>Products List</h1>
+<h2>Products Index</h2>
 
 <!-- Flash messages for feedback -->
 <?= $this->Flash->render() ?>

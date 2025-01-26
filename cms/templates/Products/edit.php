@@ -1,10 +1,8 @@
-<!-- CSS style -->
-<?= $this->Html->css('style.css') ?>
-
 <!-- Nav buttons to go back to home, add or delete the item -->
 <div class="btmNav">
     <p><?= $this->Html->link('Back to Home Page', ['action' => 'index'], ['class' => 'button']) ?></p>
     <p><?= $this->Html->link('Add New Product', ['action' => 'add'], ['class' => 'button']) ?></p>
+    <p> <?= $this->Html->link("View product", ['action' => 'view', $product->id], ['class' => 'button']) ?></p>
     <p> <?= $this->Form->postLink(__('Delete Product'), ['action' => 'delete', $product->id],  ['class' => 'button'], ['confirm' => __('Are you sure you want to delete: {0}?', $product->name)]) ?></p>
 </div>
 
