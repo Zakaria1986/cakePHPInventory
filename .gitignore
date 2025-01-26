@@ -1,12 +1,24 @@
 # Ignore everything
 /*
 
+# Don't ignore cms folder
+!/cms/
+
+# Ignore everything inside cms except specific folders
+/cms/*
+!/cms/src/
+/cms/src/*
+!/cms/src/Controller/
+/cms/src/Model/
+/cms/src/Templates/Products/
+/cms/config/
+/cms/webroot/css/
 
 # Ignore vendor folder in cms
-cms/vendor/
+/cms/vendor/
 
 # Ignore temporary files and logs
-cms/tmp/
+/cms/tmp/
 cms/logs/
 
 # Ignore Composer files in the root
@@ -15,14 +27,5 @@ composer.phar
 # MacOS system files
 .DS_Store
 
-
-
-#Don't ignore these folders
-!/cms/src/Controller/
-!/cms/Model/
-!/cms/Templates/Products
-!/cms/config
-!/cms/webroot/css
-!/cms/webroot/css
+# Ensure .gitignore itself is not ignored
 !.gitignore
-
