@@ -36,7 +36,6 @@ class ProductsController extends AppController
         $this->set(compact('product'));
     }
 
-
     /**
      * Edit method
      *
@@ -44,17 +43,34 @@ class ProductsController extends AppController
      * @return \Cake\Http\Response|null|void Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
+    // Edit documenation: https://book.cakephp.org/5/en/quickstart.html#add-edit-action
+
+    // public function edit($id = null)
+    // {
+    //     $product = $this->Products->get($id, contain: []);
+
+    //     if ($this->request->is(['post', 'put'])) {
+    //         $this->Articles->patchEntity($product, $this->request->getData());
+    //         if ($this->Articles->save($product)) {
+    //             $this->Flash->success(__('Your article has been updated.'));
+
+    //             return $this->redirect(['action' => 'index']);
+    //         }
+    //         $this->Flash->error(__('Unable to update your product.'));
+    //     }
+    //     $this->set('product', $product);
+    // }
     public function edit($id = null)
     {
         $product = $this->Products->get($id, contain: []);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $product = $this->Products->patchEntity($product, $this->request->getData());
             if ($this->Products->save($product)) {
-                $this->Flash->success(__('The product has been saved.'));
-
+                $this->Flash->success(__('The product has been updated.'));
+                
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The product could not be saved. Please, try again.'));
+            $this->Flash->error(__('Make sure you have entered valid data and try again.'));
         }
         $this->set(compact('product'));
     }
