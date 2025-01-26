@@ -14,13 +14,16 @@
 
 * File and Class Name Conventions
 * Database Conventions
+
+![alt Text](git_img/db_convention.png)
+
 * Model Conventions
 
 ![alt Text](image.png)
 
 * View Conventions
 
-* https://book.cakephp.org/5/en/intro/conventions.html
+* [Reference](https://book.cakephp.org/5/en/intro/conventions.html)
 
 ### Folder structure and writing codes:
 
