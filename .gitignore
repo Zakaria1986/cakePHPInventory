@@ -17,7 +17,7 @@ composer.phar
 
 
 
-Don't ignore these folders
+#Don't ignore these folders
 !/cms/src/Controller/
 !/cms/Model/
 !/cms/Templates/Products
