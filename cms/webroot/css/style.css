@@ -3,13 +3,13 @@
 }
 
 .btmNav {
-
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     gap: 1px;
-
 }
 
-.p {
-    grid-area: 1 / 1 / span 2 / span 3;
+.filter_and_search_sec {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1px;
 }

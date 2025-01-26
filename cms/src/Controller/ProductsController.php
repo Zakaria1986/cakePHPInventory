@@ -18,16 +18,23 @@ class ProductsController extends AppController
      */
     public function index()
     {
+        $searchQuery = $this->request->getQuery('search');
         $status = $this->request->getQuery('status');
-
         $query = $this->Products->find();
         // Apply a filter if 'status' is provided
         if (!empty($status)) {
             $query = $query->where(['status' => $status]);
         }
+        // Search by 'like' matching charectors
+        if (!empty($searchQuery)) {
+            $query = $query->where([
+                'OR' => [
+                    'name LIKE' => '%' . $searchQuery . '%'
+                ]
+            ]);
+        }
         $products = $this->paginate($query);
-
-        $this->set(compact('products', 'status'));
+        $this->set(compact('products', 'status', 'searchQuery'));
     }
 
     /**
@@ -83,7 +90,6 @@ class ProductsController extends AppController
         } else {
             $this->Flash->error(__('The product could not be deleted. Please, try again.'));
         }
-
         return $this->redirect(['action' => 'index']);
     }
 
@@ -99,7 +105,6 @@ class ProductsController extends AppController
             $product = $this->Products->patchEntity($product, $this->request->getData());
             if ($this->Products->save($product)) {
                 $this->Flash->success(__('The product has been saved.'));
-
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The product could not be saved. Please, try again.'));

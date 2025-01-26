@@ -1,29 +1,45 @@
-<h2>Products Index</h2>
-
 <!-- Flash messages for feedback -->
 <?= $this->Flash->render() ?>
 
 <!-- Filter Form -->
-<div class="filter-form">
-    <?= $this->Form->create(null, ['type' => 'get', 'url' => ['action' => 'index']]) ?>
-    <fieldset>
-        <legend><?= __('Filter by Status') ?></legend>
-        <?= $this->Form->control('status', [
-            'type' => 'select',
-            'options' => [
-                '' => 'All', // Default to show all products
-                'in stock' => 'In Stock',
-                'low stock' => 'Low Stock',
-                'out of stock' => 'Out of Stock',
-            ],
-            'value' => $status, // Preserve the selected value
-        ]) ?>
-    </fieldset>
-    <?= $this->Form->button(__('Filter')) ?>
-    <?= $this->Form->end() ?>
-</div>
+<section class='filter_and_search_sec'>
+    <div class="filter-form ">
+        <?= $this->Form->create(null, ['type' => 'get', 'url' => ['action' => 'index']]) ?>
+        <!-- filter starts here -->
+        <fieldset>
+            <?= $this->Form->control('status', [
+                'type' => 'select',
+                'style' => 'width: 100%;',
+                'options' => [
+                    '' => 'All', // Default to show all products
+                    'in stock' => 'In Stock',
+                    'low stock' => 'Low Stock',
+                    'out of stock' => 'Out of Stock',
+                ],
+                'value' => $status, // Remmber the select key
+            ]) ?>
+        </fieldset>
 
+        <!-- The action buttons i.e. submit -->
+        <?= $this->Form->button(__('filter')) ?>
+        <?= $this->Form->end() ?>
+    </div>
+    <div class="search-form">
+        <?= $this->Form->create(null, ['type' => 'get', 'url' => ['action' => 'index']]) ?>
+        <fieldset>
+            <?= $this->Form->control('search', [
+                'type' => 'text',
+                'placeholder' => 'Search by name',
+                'style' => 'width:100%;',
+                'value' => $searchQuery, // Remember the search key
+            ]) ?>
+        </fieldset>
+        <?= $this->Form->button(__('Search')) ?>
+        <?= $this->Form->end() ?>
+    </div>
+</section>
 <!-- Products Table -->
+<h2>Products Index</h2>
 <table class="table">
     <thead>
         <tr>
