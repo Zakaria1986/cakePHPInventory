@@ -4,6 +4,7 @@ $prodName = $product->name;
 $prodPrice = $product->price;
 $prodQuantity = $product->quantity;
 $prodSatus = $product->status;
+$prodLastUpdated = $product->modified;
 ?>
 
 <p><?= $this->Html->link('Back to Home Page', ['action' => 'index'], ['class' => 'button']) ?></p>
@@ -13,9 +14,10 @@ $prodSatus = $product->status;
         <span class="prodTitleClass"> id: </span><?= $prodId ?>
     </p>
     <p class="product-name"> <span class="prodTitleClass"> Product Name: </span><?= $prodName ?></p>
-    <p class="product-price"> <span class="prodTitleClass"> Prdocut price: £</span> <?= $prodPrice  ?></p>
     <P class="product-quantity"> <span class="prodTitleClass"> Product quantity: </span><?= $prodQuantity ?></p>
-    <p class="product-status"> <span class="prodTitleClass"> Product Status: </span><?= $prodSatus ?></p>
+    <p class="product-price"> <span class="prodTitleClass"> Prdocut price: £</span> <?= $prodPrice  ?></p>
+    <p class="product-status"> <span class="prodTitleClass"> Product price: </span><?= $prodSatus ?></p>
+    <p class="product-status"> <span class="prodTitleClass"> Product last updated: </span><?= $prodLastUpdated ?></p>
 </div>
 
 

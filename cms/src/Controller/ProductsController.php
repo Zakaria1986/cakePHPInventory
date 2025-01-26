@@ -18,9 +18,16 @@ class ProductsController extends AppController
      */
     public function index()
     {
+        $status = $this->request->getQuery('status');
+
         $query = $this->Products->find();
+        // Apply a filter if 'status' is provided
+        if (!empty($status)) {
+            $query = $query->where(['status' => $status]);
+        }
         $products = $this->paginate($query);
-        $this->set(compact('products'));
+
+        $this->set(compact('products', 'status'));
     }
 
     /**

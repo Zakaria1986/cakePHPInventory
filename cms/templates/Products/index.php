@@ -3,6 +3,26 @@
 <!-- Flash messages for feedback -->
 <?= $this->Flash->render() ?>
 
+<!-- Filter Form -->
+<div class="filter-form">
+    <?= $this->Form->create(null, ['type' => 'get', 'url' => ['action' => 'index']]) ?>
+    <fieldset>
+        <legend><?= __('Filter by Status') ?></legend>
+        <?= $this->Form->control('status', [
+            'type' => 'select',
+            'options' => [
+                '' => 'All', // Default to show all products
+                'in stock' => 'In Stock',
+                'low stock' => 'Low Stock',
+                'out of stock' => 'Out of Stock',
+            ],
+            'value' => $status, // Preserve the selected value
+        ]) ?>
+    </fieldset>
+    <?= $this->Form->button(__('Filter')) ?>
+    <?= $this->Form->end() ?>
+</div>
+
 <!-- Products Table -->
 <table class="table">
     <thead>
