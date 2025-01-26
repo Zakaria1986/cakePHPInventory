@@ -9,10 +9,11 @@
 !/cms/src/
 /cms/src/*
 !/cms/src/Controller/
-/cms/src/Model/
-/cms/src/Templates/Products/
-/cms/config/
-/cms/webroot/css/
+!/cms/src/Model/
+!/cms/src/Templates/Products/
+!/cms/config/
+!/cms/webroot/css/
+!/git_img/
 
 # Ignore vendor folder in cms
 /cms/vendor/

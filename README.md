@@ -21,8 +21,6 @@
 
 ![alt Text](image.png)
 
-* View Conventions
-
 * [Reference](https://book.cakephp.org/5/en/intro/conventions.html)
 
 ### Folder structure and writing codes:
