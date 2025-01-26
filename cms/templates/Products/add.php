@@ -52,5 +52,7 @@
     ]
 );
 ?>
-<?= $this->Form->button(__('Add prodcut')) ?>
+<?= $this->Form->button(__('Add prodcut')) ?><?= " " ?>
+<?= $this->Form->button(__('Reset'), ['type' => 'reset', 'class' => 'btn btn-secondary']) ?>
+
 <?= $this->Form->end() ?>
