@@ -25,7 +25,6 @@
                     <td><?= h($product->price) ?></td>
                     <td><?= h($product->status) ?></td>
                     <td class="actions">
-
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $product->id]) ?> |
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $product->id], ['confirm' => __('Are you sure you want to delete: {0}?', $product->name)]) ?>
                     </td>
@@ -38,7 +37,7 @@
         <?php endif; ?>
     </tbody>
 </table>
-<!-- Add New Product Button -->
+<!-- Add New Item Nav -->
 <p><?= $this->Html->link('Add New Product', ['action' => 'add'], ['class' => 'button']) ?></p>
 
 <!-- Pagination Controls -->
