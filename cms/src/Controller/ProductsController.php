@@ -45,21 +45,6 @@ class ProductsController extends AppController
      */
     // Edit documenation: https://book.cakephp.org/5/en/quickstart.html#add-edit-action
 
-    // public function edit($id = null)
-    // {
-    //     $product = $this->Products->get($id, contain: []);
-
-    //     if ($this->request->is(['post', 'put'])) {
-    //         $this->Articles->patchEntity($product, $this->request->getData());
-    //         if ($this->Articles->save($product)) {
-    //             $this->Flash->success(__('Your article has been updated.'));
-
-    //             return $this->redirect(['action' => 'index']);
-    //         }
-    //         $this->Flash->error(__('Unable to update your product.'));
-    //     }
-    //     $this->set('product', $product);
-    // }
     public function edit($id = null)
     {
         $product = $this->Products->get($id, contain: []);
@@ -67,12 +52,27 @@ class ProductsController extends AppController
             $product = $this->Products->patchEntity($product, $this->request->getData());
             if ($this->Products->save($product)) {
                 $this->Flash->success(__('The product has been updated.'));
-                
+
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('Make sure you have entered valid data and try again.'));
         }
         $this->set(compact('product'));
+    }
+
+
+
+    public function delete($id = null)
+    {
+        $this->request->allowMethod(['post', 'delete']);
+        $product = $this->Products->get($id);
+        if ($this->Products->delete($product)) {
+            $this->Flash->success(__('The product has been deleted.'));
+        } else {
+            $this->Flash->error(__('The product could not be deleted. Please, try again.'));
+        }
+
+        return $this->redirect(['action' => 'index']);
     }
 
     // /**
@@ -96,23 +96,4 @@ class ProductsController extends AppController
     // }
 
 
-    // /**
-    //  * Delete method
-    //  *
-    //  * @param string|null $id Product id.
-    //  * @return \Cake\Http\Response|null Redirects to index.
-    //  * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-    //  */
-    // public function delete($id = null)
-    // {
-    //     $this->request->allowMethod(['post', 'delete']);
-    //     $product = $this->Products->get($id);
-    //     if ($this->Products->delete($product)) {
-    //         $this->Flash->success(__('The product has been deleted.'));
-    //     } else {
-    //         $this->Flash->error(__('The product could not be deleted. Please, try again.'));
-    //     }
-
-    //     return $this->redirect(['action' => 'index']);
-    // }
 }
