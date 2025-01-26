@@ -10,7 +10,15 @@
 
 * https://book.cakephp.org/5/en/intro/cakephp-folder-structure.html
 
-### Standard follow when coding:
+### Standard to follow when coding:
+
+* File and Class Name Conventions
+* Database Conventions
+* Model Conventions
+
+![alt Text](image.png)
+
+* View Conventions
 
 * https://book.cakephp.org/5/en/intro/conventions.html
 
