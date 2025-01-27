@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Model\Entity;
@@ -25,10 +26,24 @@ class Product extends Entity
      *
      * @var array<string, bool>
      */
+
+    // This is a virtual status, meaning it doesn't not interact with the database
     protected array $_accessible = [
         'name' => true,
         'quantity' => true,
         'price' => true,
         'status' => true,
     ];
+
+    protected function _getStatus()
+    {
+        if ($this->quantity > 10) {
+            return 'In stock';
+        } elseif ($this->quantity > 0) {
+            return 'Low stock';
+        } else {
+            return 'Out of stock';
+        }
+    }
+
 }

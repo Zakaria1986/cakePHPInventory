@@ -7,6 +7,7 @@ use Cake\Log\Engine\FileLog;
 use Cake\Mailer\Transport\MailTransport;
 
 return [
+    // 'debug' => true,
     /*
      * Debug Level:
      *
@@ -365,6 +366,7 @@ return [
         ],
     ],
 
+
     /*
      * Session configuration.
      *
@@ -407,4 +409,6 @@ return [
     'Session' => [
         'defaults' => 'php',
     ],
+
+
 ];
