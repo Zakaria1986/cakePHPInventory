@@ -41,6 +41,7 @@ class ProductsTable extends Table
         $this->setTable('products');
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
+        $this->addBehavior('Timestamp');
     }
 
     /**

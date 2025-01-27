@@ -35,6 +35,10 @@ class Product extends Entity
         'status' => true,
     ];
 
+    /*
+    this getter method _get< the column to get from the table used to 
+    get the value of status here which then dynamcally sets the status based on conditions>
+    */
     protected function _getStatus()
     {
         if ($this->quantity > 10) {
@@ -45,5 +49,4 @@ class Product extends Entity
             return 'Out of stock';
         }
     }
-
 }
