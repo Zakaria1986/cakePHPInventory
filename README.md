@@ -82,9 +82,13 @@
 
 ![Folder Structure](/git_img/fld_tree.png)
 
-#
+### Here is a demo of the application
 
-*
+# Demo
+
+[Click here to view the demo video](/git_img/cakephpDemo.webm)
+
+## Other references: 
 
 ### CakePHP coding convention guide to follow:
 
