@@ -72,7 +72,7 @@
 2. Access the Application: Open your browser and go to: **http://localhost:8765** 
 3. Stop the server: control+c
 
-## Make you have the database running at the same 
+## Make sure that the database is running at the same 
 
 * I have used MAMP to run PHPMyAdmin to work with database side of things
 
