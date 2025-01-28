@@ -7,7 +7,7 @@ use Cake\Log\Engine\FileLog;
 use Cake\Mailer\Transport\MailTransport;
 
 return [
-    // 'debug' => true,
+    'debug' => true,
     /*
      * Debug Level:
      *
@@ -108,13 +108,29 @@ return [
          * Duration will be set to '+2 minutes' in bootstrap.php when debug = true
          * If you set 'className' => 'Null' core cache will be disabled.
          */
+        // '_cake_core_' => [
+        //     'className' => FileEngine::class,
+        //     'prefix' => 'myapp_cake_core_',
+        //     'path' => CACHE . 'persistent' . DS,
+        //     'serialize' => true,
+        //     'duration' => '+1 years',
+        //     'url' => env('CACHE_CAKECORE_URL', null),
+        // ],
         '_cake_core_' => [
-            'className' => FileEngine::class,
+            'className' => 'File',
             'prefix' => 'myapp_cake_core_',
-            'path' => CACHE . 'persistent' . DS,
+            'path' => CACHE . 'persistent/',
             'serialize' => true,
             'duration' => '+1 years',
-            'url' => env('CACHE_CAKECORE_URL', null),
+            'fallback' => 'default'
+        ],
+        '_cake_translations_' => [
+            'className' => 'File',
+            'prefix' => 'myapp_cake_translations_',
+            'path' => CACHE . 'translations/',
+            'serialize' => true,
+            'duration' => '+1 years',
+            'fallback' => 'default'
         ],
 
         /*
@@ -170,13 +186,20 @@ return [
      *   should be ignored in. Use this to ignore deprecations for plugins or parts of
      *   your application that still emit deprecations.
      */
+    // 'Error' => [
+    //     'errorLevel' => E_ALL,
+    //     'skipLog' => [],
+    //     'log' => true,
+    //     'trace' => true,
+    //     'ignoredDeprecationPaths' => [],
+    // ],
     'Error' => [
-        'errorLevel' => E_ALL,
-        'skipLog' => [],
-        'log' => true,
-        'trace' => true,
-        'ignoredDeprecationPaths' => [],
+        'errorLevel' => E_ALL & ~E_USER_DEPRECATED,
+        'ignoredDeprecationPaths' => [
+            'vendor/cakephp/cakephp/src/I18n/I18n.php'
+        ]
     ],
+
 
     /*
      * Debugger configuration

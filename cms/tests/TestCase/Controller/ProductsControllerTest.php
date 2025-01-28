@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Test\TestCase\Controller;
@@ -42,10 +43,10 @@ class ProductsControllerTest extends TestCase
      * @return void
      * @uses \App\Controller\ProductsController::view()
      */
-    public function testView(): void
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
+    // public function testView(): void
+    // {
+    //     $this->markTestIncomplete('Not implemented yet.');
+    // }
 
     /**
      * Test add method
@@ -53,10 +54,10 @@ class ProductsControllerTest extends TestCase
      * @return void
      * @uses \App\Controller\ProductsController::add()
      */
-    public function testAdd(): void
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
+    // public function testAdd(): void
+    // {
+    //     $this->markTestIncomplete('Not implemented yet.');
+    // }
 
     /**
      * Test edit method
@@ -64,10 +65,10 @@ class ProductsControllerTest extends TestCase
      * @return void
      * @uses \App\Controller\ProductsController::edit()
      */
-    public function testEdit(): void
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
+    // public function testEdit(): void
+    // {
+    //     $this->markTestIncomplete('Not implemented yet.');
+    // }
 
     /**
      * Test delete method
@@ -75,8 +76,10 @@ class ProductsControllerTest extends TestCase
      * @return void
      * @uses \App\Controller\ProductsController::delete()
      */
-    public function testDelete(): void
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
+    // public function testDelete(): void
+    // {
+    // $this->markTestIncomplete('Not implemented yet.');
+    // }
 }
+
+// vendor/bin/phpunit tests/TestCase/Controller/ProductsControllerTest.php
