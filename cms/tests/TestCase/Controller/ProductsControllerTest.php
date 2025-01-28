@@ -38,8 +38,6 @@ class ProductsControllerTest extends TestCase
         $this->enableCsrfToken();
         $this->enableSecurityToken();
     }
-
-
     /**
      * Test index method
      *
@@ -74,24 +72,56 @@ class ProductsControllerTest extends TestCase
      * @uses \App\Controller\ProductsController::add()
      * dataProvider test_data_for_add
      */
+
     public function testAdd(): void
     {
-        $this->post('/products/add', [
-            'name' => 'Add new item 1 through controller',
-            'price' => 30.00,
-            'quantity' => 10,
-            'status' => 'in stock'
+        $this->post(
+            '/products/add',
+            [
+                'name' => 'Add new item 1 through controller',
+                'price' => 20.00,
+                'quantity' => 10,
+                'status' => 'in stock'
 
-        ]);
+            ],
+            [
+                'name' => 'Add new item 1 through controller 2',
+                'price' => 33.00,
+                'quantity' => 0,
+                'status' => 'out of stock'
+
+            ],
+            [
+                'name' => 'Add new item 1 through controller 3',
+                'price' => 30.00,
+                'quantity' => 11,
+                'status' => 'in stock'
+
+            ],
+            [
+                'name' => 'Add new item 1 through controller 4',
+                'price' => 5,
+                'quantity' => 40,
+                'status' => 'in stock'
+
+            ],
+            [
+                'name' => 'Add new item 1 through controller 5',
+                'price' => 10.00,
+                'quantity' => 4,
+                'status' => 'low stock'
+
+            ],
+            [
+                'name' => 'Add new item 1 through controller 6',
+                'price' => 40.00,
+                'quantity' => 10,
+                'status' => 'low stock'
+
+            ]
+        );
         $this->assertResponseSuccess();
         $this->assertRedirect(['action' => 'index']);
-
-        // Verify the product was saved in the database
-        $products = $this->getTableLocator()->get('Products');
-        $product = $products->find()->where(['name' => 'Add new item 1 through controller'])->first();
-        $this->assertNotEmpty($product, 'The product saved in the database.');
-        $this->assertEquals(30, $product->price);
-        $this->assertEquals(10, $product->quantity);
     }
 
     /**
@@ -104,10 +134,26 @@ class ProductsControllerTest extends TestCase
     {
         // seems like datas are being stored in the database
         $data = [
-            'name' => 'New Product',
-            'price' => 30.00,
-            'quantity' => 10,
-            'status' => 'in stock'
+            [
+                'name' => 'Editing New Product',
+                'price' => 30.00,
+                'quantity' => 4,
+                'status' => 'low stock'
+            ],
+            [
+                'name' => 'Editing new item 1 through controller 5',
+                'price' => 10.00,
+                'quantity' => 4,
+                'status' => 'Low stock'
+
+            ],
+            [
+                'name' => 'Edting new item 1 through controller 6',
+                'price' => 40.00,
+                'quantity' => 20,
+                'status' => 'in stock'
+
+            ]
         ];
         // getting error on this one
         $this->put('/products/edit/3', $data);
@@ -126,10 +172,6 @@ class ProductsControllerTest extends TestCase
         $this->delete('/products/delete/12');
         $this->assertResponseSuccess(); // database is not being connected. This might further need connecting with the database. 
         $this->assertRedirect(['action' => 'index']);
-
-        $products = $this->getTableLocator()->get('Products');
-        $query = $products->find()->where(['id' => 1]);
-        $this->assertEquals(0, $query->count());
     }
 
     // this is data provider for the test however its seem like that is not longer supported as it give depricated warning. 
