@@ -88,6 +88,22 @@
 
 [Click here to view the demo video](/git_img/cakephpDemo.webm)
 
+## Testing applicaiton with PHPUnit test
+
+* [Cake PHP docs](https://book.cakephp.org/5/en/development/testing.html#installing-phpunit)
+* [PHPUnit documentation](https://docs.phpunit.de/en/11.5/writing-tests-for-phpunit.html)
+
+Note: its worth remembering the version of phpunit installed otherwise there's gonna lot of issue running. My my case test was not connecting to the database. If i find a fix, I'll updated. 
+
+files could be found in:
+* /cms/test/testCase/controler/ProductsControlerTest.php
+* /cms/test/testCase/table/ProductsControlerTest.php
+
+### Commands to run the test case
+
+ -  vendor/bin/phpunit tests/TestCase/Controller/ProductsControllerTest.php
+ -  vendor/bin/phpunit tests/TestCase/Model/Table/ProductsTableTest.php    
+
 ## Other references: 
 
 ### CakePHP coding convention guide to follow:

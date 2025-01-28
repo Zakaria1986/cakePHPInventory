@@ -14,6 +14,8 @@
 !/cms/config/
 !/cms/webroot/css/
 !/git_img/
+!/cms/tests/testCase/controler/ProductsControlerTest.php
+!/cms/tests/TestCase/Model/Table/ProductsTableTest.php    
 
 # Ignore vendor folder in cms
 /cms/vendor/
